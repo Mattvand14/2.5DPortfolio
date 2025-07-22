@@ -1,23 +1,17 @@
-/* Add perspective to the whole board */
+/* Root board container */
 .game-board {
     display: grid;
-    grid-template-rows: repeat(6, 100px);
+    grid-template-columns: repeat(7, 100px); /* 7 tiles per row */
     gap: 10px;
-    transform: rotateX(30deg) rotateZ(0deg);
+    transform: rotateX(30deg);
     transform-style: preserve-3d;
-    perspective: 800px;
+    perspective: 1000px;
     margin: auto;
+    will-change: transform;
 }
 
-/* Each row contains a grid of tiles */
-.board-row {
-    display: grid;
-    grid-template-columns: repeat(7, 100px);
-    gap: 5px;
-}
-
-/* Common tile style */
-.tile {
+/* Base tile styling */
+.filled-tile {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,20 +21,16 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform-style: preserve-3d;
     border-radius: 10px;
-}
-
-/* 3D style for filled tiles */
-.filled-tile {
-    background-color: #4caf50;
+    background-color: #8d6d3a;
     color: white;
     font-weight: bold;
     border: 2px solid #1e4620;
     box-shadow: 0 8px 0 #222;
 }
 
-/* Optional hover effect for interactivity */
+/* Hover effect */
 .filled-tile:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 8px rgba(255, 225, 2, 0.3);
     cursor: pointer;
 }

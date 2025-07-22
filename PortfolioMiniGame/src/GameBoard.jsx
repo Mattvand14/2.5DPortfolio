@@ -1,53 +1,47 @@
 import React, { useState } from 'react';
 import './GameBoard.css';
+import Tile from './Tile';
 
-function GameBoard () {
-    // 1 = start 
-    // 2 = music journey fork, 3 = album 1, 4 = album 2, 5 = current works
-    // 6 = swim/academics/projects route fork
-    // 7 = HS swim, 8 = college swim
-    // 9 = highschool/journey, 10 = academics/professional fork, 11 = federated
-    // 12 = unc comp sci, 13 = masters?
-    // 14 = codings projects, 15 = personal/school fork
-    // 16 = spotify thing, 17 = this website, 18 =old portfolio
-    // 19 = ROI AI for busi, 20 = C shell in linux, 21 = android story teller ai thing
+function GameBoard() {
+  const [playerPos, setPlayerPos] = useState({ row: 2, col: 2 });
 
-    const[board] = useState([
-        ['0', '0', '0', '8', '0', '0', '0'],
-        ['0', '3', '0', '7', '0', '0', '0'],
-        ['4', '2', '1', '6', '9', '10', '11'],
-        ['0', '5', '0', '14', '0', '12', '0'],
-        ['0', '17', '16', '15', '0', '13', '0'],
-        ['0', '18', '0', '19', '20', '21', '0'],
-    ]);
-    return(mapBoardCells(board))
-}
+  const board = [
+    ['0', '0', '0', 'College Swim', '0', '0', '0'],
+    ['0', 'Album 1', '0', 'HighSchool Swim', '0', '0', '0'],
+    ['Album 2', 'Music Journey', 'start', 'big fork', 'Highschool Journey', 'Academic or Professional', 'Federates'],
+    ['0', 'Current Works', '0', 'Coding Projects', '0', 'UNC Comp Sci', '0'],
+    ['0', 'This Website', 'Spotify Globe', 'Personal or school', '0', 'Masters', '0'],
+    ['0', 'Old Portfolio', '0', 'ROI AI', 'C Shell', 'Android App', '0'],
+  ];
 
-function mapBoardCells(board) {
-
+  // Helper to check if a cell is visible
+  const isVisible = (r, c) => {
+    const { row, col } = playerPos;
     return (
-        <div className="game-board">
-        {board.map((row, rowIndex) => (
-            <div key={rowIndex} className="board-row">
-            {row.map((cell, colIndex) => {
-                const isEmpty = cell === '0';
-                return (
-                <div
-                    key={colIndex}
-                    className={`tile ${isEmpty ? 'empty-tile' : 'filled-tile'}`}
-                    id={`tile-${rowIndex}-${colIndex}`}
-                >
-                    {!isEmpty && cell}
-                </div>
-                );
-            })}
-            </div>
-        ))}
-        </div>
+      (r === row && c === col) ||
+      (r === row - 1 && c === col) ||
+      (r === row + 1 && c === col) ||
+      (r === row && c === col - 1) ||
+      (r === row && c === col + 1)
     );
+  };
 
+  return (
+    <div className="game-board">
+      {board.map((row, rowIndex) =>
+        row.map((cell, colIndex) => (
+          <Tile
+            key={`${rowIndex}-${colIndex}`}
+            row={rowIndex}
+            col={colIndex}
+            label={cell}
+            isVisible={isVisible(rowIndex, colIndex)}
+            setPlayerPos = {setPlayerPos}
+          />
+        ))
+      )}
+    </div>
+  );
 }
 
-export default GameBoard
-
-
+export default GameBoard;
