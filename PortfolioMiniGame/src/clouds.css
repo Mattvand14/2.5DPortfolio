@@ -1,0 +1,5 @@
+/* clouds.css */
+.cloud-overlay {
+  /* you could also size/position it here if you need adjustments */
+  z-index: 10;
+}

@@ -1,0 +1,54 @@
+/* Individual tile styles */
+
+/* start tile */
+#tile-2-2{
+    background-image: url('../public/updatedStart.svg');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* main fork tile */
+#tile-2-3{
+    background-image: url('../public/portfolioMainForkTile.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+
+}
+
+#tile-3-3{
+    background-image: url('../public/portfolioMainForkTile.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+
+}
+
+#tile-1-3{
+    background-image: url('../public/portfolioMainForkTile.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+
+}
+
+#tile-2-4{
+    background-image: url('../public/portfolioMainForkTile.svg');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+
+}
+
+
+/* clouds.css */
+.cloud-overlay {
+  /* you could also size/position it here if you need adjustments */
+  z-index: 10;
+}
