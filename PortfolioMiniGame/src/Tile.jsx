@@ -1,7 +1,9 @@
 // Tile.jsx
 import React from 'react';
-import CloudOverlay from './CloudSprite';
-import CloudOverlay2 from './CloudSpriteTwo';
+import CloudOverlay from './CloudOverlays/CloudSprite';
+import CloudOverlay2 from './CloudOverlays/CloudSpriteTwo';
+import CloudOverlay3 from './CloudOverlays/CloudSpriteThree';
+
 import './GameBoard.css';
 import './clouds.css';
 
@@ -25,6 +27,7 @@ function Tile({ row, col, label, isVisible, setPlayerPos, visited }) {
       {/* CloudOverlay will sit on top of your CSS background */}
       <CloudOverlay visited={visited} />
       <CloudOverlay2 visited={visited} />
+      <CloudOverlay3 visited={visited} />
     </div>
   );
 }

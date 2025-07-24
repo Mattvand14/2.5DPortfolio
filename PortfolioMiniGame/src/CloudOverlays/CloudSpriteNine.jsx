@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import clouds from '../public/sprites/clouds.png';
 
-export default function CloudOverlay2({
+export default function CloudOverlay9({
   visited,
   rows = 4,        // number of sprite‐rows in the sheet
   cols = 3,        // number of sprite‐cols in the sheet
@@ -19,7 +19,7 @@ export default function CloudOverlay2({
   useEffect(() => {
     const interval = setInterval(() => {
       setFrame((f) => (f + 1) % total);
-    }, 10000 / fps);
+    }, 50000 / fps);
     return () => clearInterval(interval);
   }, [fps, total]);
 
@@ -32,8 +32,8 @@ export default function CloudOverlay2({
   }, [visited]);
 
   // compute background-position for the current frame
-  const sx = -(frame % cols) * frameW;
-  const sy = -Math.floor(frame / cols) * frameH;
+  const sx = -(frame % cols) * frameW + (Math.random() * 1000);
+  const sy = -Math.floor(frame / cols) * frameH + (Math.random() * 1000);
 
   return (
     <div
@@ -49,7 +49,7 @@ export default function CloudOverlay2({
         backgroundPosition: `${sx}px ${sy}px`,
         backgroundSize: `${cols * frameW}px ${rows * frameH}px`,
         opacity,
-        transition: "opacity 10s cubic-bezier(.77,0,.18,1)",
+        transition: "opacity 7.5s cubic-bezier(.77,0,.18,1)",
       }}
     />
   );

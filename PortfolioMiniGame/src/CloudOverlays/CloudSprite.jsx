@@ -19,7 +19,7 @@ export default function CloudOverlay({
   useEffect(() => {
     const interval = setInterval(() => {
       setFrame((f) => (f + 1) % total);
-    }, 10000 / fps);
+    }, 50000 / fps);
     return () => clearInterval(interval);
   }, [fps, total]);
 
