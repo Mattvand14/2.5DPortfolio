@@ -1,6 +1,6 @@
 // CloudOverlay.jsx
 import React, { useEffect, useState } from "react";
-import clouds from '../public/sprites/clouds.png';
+import clouds from '../../public/sprites/clouds.png';
 
 export default function CloudOverlay({
   visited,
@@ -19,7 +19,7 @@ export default function CloudOverlay({
   useEffect(() => {
     const interval = setInterval(() => {
       setFrame((f) => (f + 1) % total);
-    }, 50000 / fps);
+    }, (10000000 ) / fps);
     return () => clearInterval(interval);
   }, [fps, total]);
 
@@ -32,7 +32,7 @@ export default function CloudOverlay({
   }, [visited]);
 
   // compute background-position for the current frame
-  const sx = -(frame % cols) * frameW;
+  const sx = -(frame % cols) * frameW + 100;
   const sy = -Math.floor(frame / cols) * frameH;
 
   return (

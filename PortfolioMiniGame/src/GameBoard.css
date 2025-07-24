@@ -2,7 +2,7 @@
     width: 1100px;             
     height: 900px;             
     overflow: hidden;
-    margin: auto;
+    margin: none;
     position: relative;
     display: flex;
     align-items: center;
@@ -13,9 +13,9 @@
 
 .game-board {
     display: grid;
-    grid-template-columns: repeat(7, 800px);
+    grid-template-columns: repeat(7, 820px);
     grid-template-rows: repeat(6, 800px);
-    gap: 5px;
+    gap: 0px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -23,7 +23,7 @@
     will-change: transform;
     transition: transform 5.0s ease;
     background-image: url('../public/adjustedWater.png');
-
+    border-radius: 50px;
 }
 
 .filled-tile {
@@ -52,6 +52,7 @@
 .cloud-overlay {
   /* you could also size/position it here if you need adjustments */
   z-index: 1;
+  border-radius: 50;
 }
 
 

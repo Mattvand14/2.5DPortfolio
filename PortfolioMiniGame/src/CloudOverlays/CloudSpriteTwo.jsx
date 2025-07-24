@@ -1,6 +1,6 @@
 // CloudOverlay.jsx
 import React, { useEffect, useState } from "react";
-import clouds from '../public/sprites/clouds.png';
+import clouds from '../../public/sprites/clouds.png';
 
 export default function CloudOverlay2({
   visited,
@@ -19,7 +19,7 @@ export default function CloudOverlay2({
   useEffect(() => {
     const interval = setInterval(() => {
       setFrame((f) => (f + 1) % total);
-    }, 50000 / fps);
+    }, (10000) / fps);
     return () => clearInterval(interval);
   }, [fps, total]);
 

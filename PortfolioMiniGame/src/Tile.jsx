@@ -3,6 +3,8 @@ import React from 'react';
 import CloudOverlay from './CloudOverlays/CloudSprite';
 import CloudOverlay2 from './CloudOverlays/CloudSpriteTwo';
 import CloudOverlay3 from './CloudOverlays/CloudSpriteThree';
+import CloudOverlay4 from './CloudOverlays/CloudSpriteFour';
+import CloudOverlay5 from './CloudOverlays/CloudSpriteFive';
 
 import './GameBoard.css';
 import './clouds.css';
@@ -28,6 +30,8 @@ function Tile({ row, col, label, isVisible, setPlayerPos, visited }) {
       <CloudOverlay visited={visited} />
       <CloudOverlay2 visited={visited} />
       <CloudOverlay3 visited={visited} />
+      <CloudOverlay4 visited={visited} />
+      <CloudOverlay5 visited={visited} />
     </div>
   );
 }
