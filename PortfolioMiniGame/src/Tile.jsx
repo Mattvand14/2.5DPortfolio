@@ -1,6 +1,7 @@
 // Tile.jsx
 import React from 'react';
-import CloudOverlay from './CloudSprite';  // from previous step
+import CloudOverlay from './CloudSprite';
+import CloudOverlay2 from './CloudSpriteTwo';
 import './GameBoard.css';
 import './clouds.css';
 
@@ -19,11 +20,11 @@ function Tile({ row, col, label, isVisible, setPlayerPos, visited }) {
       className={`tile filled-tile ${!isVisible ? 'invisible-tile' : ''}`}
       onClick={movePlayer}
       /* only position + overflow in inline style — leave background‑image to your CSS */
-      style={{ /* no backgroundImage here! */ }}
     >
       {isVisible && label}
       {/* CloudOverlay will sit on top of your CSS background */}
       <CloudOverlay visited={visited} />
+      <CloudOverlay2 visited={visited} />
     </div>
   );
 }

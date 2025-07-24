@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import clouds from '../public/sprites/clouds.png';
 
-export default function CloudOverlay({
+export default function CloudOverlay2({
   visited,
   rows = 4,        // number of sprite‐rows in the sheet
   cols = 3,        // number of sprite‐cols in the sheet
@@ -49,7 +49,7 @@ export default function CloudOverlay({
         backgroundPosition: `${sx}px ${sy}px`,
         backgroundSize: `${cols * frameW}px ${rows * frameH}px`,
         opacity,
-        transition: "opacity 7.5s cubic-bezier(.77,0,.18,1)",
+        transition: "opacity 10s cubic-bezier(.77,0,.18,1)",
       }}
     />
   );

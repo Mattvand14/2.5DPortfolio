@@ -1,5 +1,5 @@
 .board-container {
-    width: 900px;             
+    width: 1100px;             
     height: 900px;             
     overflow: hidden;
     margin: auto;
@@ -13,8 +13,8 @@
 
 .game-board {
     display: grid;
-    grid-template-columns: repeat(7, 600px);
-    grid-template-rows: repeat(6, 600px);
+    grid-template-columns: repeat(7, 800px);
+    grid-template-rows: repeat(6, 800px);
     gap: 5px;
     position: absolute;
     left: 50%;
@@ -31,8 +31,8 @@
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 800px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform-style: preserve-3d;
     border-radius: 40px;
@@ -48,6 +48,11 @@
     cursor: pointer;
 }
 
+/* clouds.css */
+.cloud-overlay {
+  /* you could also size/position it here if you need adjustments */
+  z-index: 1;
+}
 
 
 

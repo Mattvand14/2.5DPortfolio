@@ -6,6 +6,7 @@ import Tile from './Tile';
 function GameBoard() {
   const [playerPos, setPlayerPos] = useState({ row: 2, col: 2 });
   const [visited, setVisited] = useState(() => new Set(['2-2']));
+  console.log(visited)
   const board = [
     ['0', '0', '0', 'College Swim', '0', '0', '0'],
     ['0', 'Album 1', '0', 'HighSchool Swim', '0', '0', '0'],
@@ -15,14 +16,14 @@ function GameBoard() {
     ['0', 'Old Portfolio', '0', 'ROI AI', 'C Shell', 'Android App', '0'],
   ];
 
-  const tileSize = 600;
+  const tileSize = 800;
   const gapSize = 20;
   const totalTileSpace = tileSize + gapSize;
   
 
   // Calculate offset to center the player's tile
-  const offsetX = playerPos.col * totalTileSpace - (600 / 2) + 600;
-  const offsetY = playerPos.row * totalTileSpace - (600 / 2) + 600;
+  const offsetX = playerPos.col * totalTileSpace - (800 / 2) + 800;
+  const offsetY = playerPos.row * totalTileSpace - (800 / 2) + 800;
 
   const transform = {
     transform: `translate(-${offsetX}px, -${offsetY}px) rotateX(30deg)`,
