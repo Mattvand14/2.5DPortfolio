@@ -4,9 +4,11 @@ import clouds from '../../public/sprites/clouds.png';
 
 export default function CloudOverlay({
   visited,
+  fps,
+  deltaX,
+  deltaY,
   rows = 4,        // number of sprite‐rows in the sheet
   cols = 3,        // number of sprite‐cols in the sheet
-  fps = 10,         // how many frames per second
 }) {
   const total = rows * cols;
   const frameW = 1024 / cols;
@@ -19,7 +21,7 @@ export default function CloudOverlay({
   useEffect(() => {
     const interval = setInterval(() => {
       setFrame((f) => (f + 1) % total);
-    }, (10000000 ) / fps);
+    }, (8000 ) / fps);
     return () => clearInterval(interval);
   }, [fps, total]);
 
@@ -32,8 +34,8 @@ export default function CloudOverlay({
   }, [visited]);
 
   // compute background-position for the current frame
-  const sx = -(frame % cols) * frameW + 100;
-  const sy = -Math.floor(frame / cols) * frameH;
+  const sx = -(frame % cols) * frameW + deltaX;
+  const sy = -Math.floor(frame / cols) * frameH + deltaY;
 
   return (
     <div
