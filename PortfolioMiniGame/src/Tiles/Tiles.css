@@ -1,8 +1,16 @@
 /* Individual tile styles */
 
 /* start tile */
+#tile-2-1{
+    background-image: url('../../public/tiles/newStartTile.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
 #tile-2-2{
-    background-image: url('../public/tiles/newStartTile.png');
+    background-image: url('../../public/tiles/newStartTile.png');
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: contain;
@@ -11,7 +19,7 @@
 
 /* main fork tile */
 #tile-2-3{
-    background-image: url('../public/tiles/ForkTile.png');
+    background-image: url('../../public/tiles/ForkTile.png');
     background-repeat: no-repeat;
     background-color: transparent;
     background-size: contain;
@@ -20,7 +28,7 @@
 }
 
 #tile-1-3{
-    background-image: url('../public/tiles/HsSwimTile.png');
+    background-image: url('../../public/tiles/HsSwimTile.png');
     background-repeat: no-repeat;
     background-color: transparent;
     background-size: contain;
@@ -29,7 +37,7 @@
 }
 
 #tile-0-3{
-    background-image: url('../public/tiles/CollegeSwimTile.png');
+    background-image: url('../../public/tiles/CollegeSwimTile.png');
     background-repeat: no-repeat;
     background-color: transparent;
     background-size: contain;
@@ -38,7 +46,7 @@
 }
 
 #tile-3-3{
-    background-image: url('../public/tiles/CodingPath.png');
+    background-image: url('../../public/tiles/CodingPath.png');
     background-repeat: no-repeat;
     background-color: transparent;
     background-size: contain;

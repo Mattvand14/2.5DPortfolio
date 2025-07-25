@@ -7,9 +7,11 @@ export default function CloudOverlay({
   fps,
   deltaX,
   deltaY,
-  rows = 4,        // number of sprite‐rows in the sheet
-  cols = 3,        // number of sprite‐cols in the sheet
+  rows = 4,        
+  cols = 3,        
 }) {
+
+
   const total = rows * cols;
   const frameW = 1024 / cols;
   const frameH = 1024 / rows;
@@ -36,17 +38,10 @@ export default function CloudOverlay({
   // compute background-position for the current frame
   const sx = -(frame % cols) * frameW + deltaX;
   const sy = -Math.floor(frame / cols) * frameH + deltaY;
-
   return (
     <div
       className="cloud-overlay"
       style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        pointerEvents: "none",
         backgroundImage: `url(${clouds})`,
         backgroundPosition: `${sx}px ${sy}px`,
         backgroundSize: `${cols * frameW}px ${rows * frameH}px`,

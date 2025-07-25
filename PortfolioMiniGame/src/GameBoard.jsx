@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './GameBoard.css';
-import './Tiles.css'
-import Tile from './Tile';
+import './Tiles/Tiles.css'
+import Tile from './Tiles/Tile';
 
 function GameBoard() {
   const [playerPos, setPlayerPos] = useState({ row: 2, col: 2 });
@@ -16,17 +16,18 @@ function GameBoard() {
     ['0', 'Old Portfolio', '0', 'ROI AI', 'C Shell', 'Android App', '0'],
   ];
 
-  const tileSize = 800;
-  const gapSize = 20;
-  const totalTileSpace = tileSize + gapSize;
-  
+  const containerWidth = 1100;
+  const tileWidth = 800;
+  const transformFunctionX = ((playerPos.col * tileWidth) - (containerWidth - tileWidth) / 2);
 
-  // Calculate offset to center the player's tile
-  const offsetX = playerPos.col * totalTileSpace - (800 / 2) + 800;
-  const offsetY = playerPos.row * totalTileSpace - (800 / 2) + 800;
+  const angleRad = 30 * Math.PI/180;
+  const containerHeight = 900;
+  const tileHeight = 800;
+  const transformFunctionY = ((playerPos.row * tileHeight) - (containerHeight - tileHeight) / 2);
+  const scaledTFY = (transformFunctionY * Math.cos(angleRad)) - 60;
 
   const transform = {
-    transform: `translate(-${offsetX}px, -${offsetY}px) rotateX(30deg)`,
+    transform: `translate(${-transformFunctionX}px, ${-scaledTFY}px) rotateX(30deg)`
   };
 
   const handleSetPlayerPos = ({row, col}) =>{
@@ -48,7 +49,7 @@ function GameBoard() {
 
   return (
     <div className='board-container'>
-      <div className="game-board" style = {transform}>
+      <div className="game-board" style = {transform} >
         {board.map((row, rowIndex) =>
           row.map((cell, colIndex) => {
             const tileClassName = `tile-${rowIndex}-${colIndex}`;
