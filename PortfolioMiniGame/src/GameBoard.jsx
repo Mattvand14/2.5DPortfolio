@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './GameBoard.css';
 import './Tiles/Tiles.css'
 import Tile from './Tiles/Tile';
+import PinkMonsterOverlay from './PinkMonsterOverlay';
 
 function GameBoard() {
   const [playerPos, setPlayerPos] = useState({ row: 2, col: 2 });
@@ -49,6 +50,7 @@ function GameBoard() {
 
   return (
     <div className='board-container'>
+      <PinkMonsterOverlay playerPos={playerPos} />
       <div className="game-board" style = {transform} >
         {board.map((row, rowIndex) =>
           row.map((cell, colIndex) => {
@@ -63,6 +65,7 @@ function GameBoard() {
                 isVisible={isVisible(rowIndex, colIndex)}
                 setPlayerPos={handleSetPlayerPos}
                 visited={isTileVisited}
+                playerPos={playerPos}
               />
             );
           })
