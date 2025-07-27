@@ -1,13 +1,6 @@
 /* Individual tile styles */
 
 /* start tile */
-#tile-2-1{
-    background-image: url('../../public/tiles/newStartTile.png');
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
 
 #tile-2-2{
     background-image: url('../../public/tiles/newStartTile.png');
@@ -16,6 +9,35 @@
     background-size: contain;
     background-position: center;
 }
+
+/* Music fork */
+#tile-2-1{
+    background-image: url('../../public/tiles/MusicFork.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#tile-2-0{
+    background-image: url('../../public/tiles/HouseAlbumTile.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#tile-1-1{
+    background-image: url('../../public/tiles/HipHopAlbum.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+
+
+
 
 /* main fork tile */
 #tile-2-3{
